@@ -1385,6 +1385,19 @@ function CaptureSparks({ id }) {
   );
 }
 
+/* 作品一覧(TOPページ)に戻るボタン。設定画面と対局画面の両方の上部に置く */
+function BackToList() {
+  return (
+    <a
+      href="https://yume-towa.github.io/"
+      className="inline-flex items-center px-3 py-1 rounded-full border border-slate-600 text-xs text-slate-300 hover:text-slate-100 hover:border-slate-400"
+      style={{ textDecoration: "none" }}
+    >
+      一覧に戻る
+    </a>
+  );
+}
+
 /* ================= メイン ================= */
 export default function GachaShogi() {
   const [screen, setScreen] = useState("menu");
@@ -1874,6 +1887,7 @@ export default function GachaShogi() {
           @keyframes rareGlow { 0%,100% { opacity: .55; } 50% { opacity: 1; } }
           @media (prefers-reduced-motion: reduce) { * { animation-duration: .01ms !important; animation-delay: 0s !important; } }`}</style>
         <div className="w-full max-w-md">
+          <div className="mb-4"><BackToList /></div>
           <div className="text-center mb-6">
             {/* 引いた3枚の駒(歩・銀・飛) */}
             <div className="relative mx-auto mb-3 flex items-end justify-center" style={{ height: 92 }}>
@@ -2060,6 +2074,7 @@ export default function GachaShogi() {
     >
       <style>{FONT_CSS}</style>
       <div className="w-full max-w-3xl">
+        <div className="mb-2"><BackToList /></div>
         {/* ヘッダー */}
         <div className="flex items-center justify-between gap-2 mb-2 flex-wrap">
           <div style={{ ...MINCHO, fontWeight: 800 }} className="text-xl text-amber-100 tracking-widest">ガチャ将棋</div>
